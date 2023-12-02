@@ -1,4 +1,4 @@
-package com.example.azway.managers
+package com.msaharov.azway.managers
 
 import android.util.Log
 import com.msaharov.azway.AppwriteClient

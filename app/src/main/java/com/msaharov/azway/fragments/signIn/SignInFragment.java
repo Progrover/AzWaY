@@ -1,4 +1,4 @@
-package com.example.azway.fragments.signIn;
+package com.msaharov.azway.fragments.signIn;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -12,7 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.azway.R;
+import com.msaharov.azway.R;
+
 
 public class SignInFragment extends Fragment {
 

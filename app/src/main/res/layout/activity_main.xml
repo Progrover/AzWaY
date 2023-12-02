@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="fbfbfb"
+        android:background="#fbfbfb"
         android:orientation="vertical"
         tools:context=".activities.MainActivity">
 
@@ -27,7 +27,7 @@
                 android:layout_width="190dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center"
-                android:src="@drawable/logo"
+                android:src="@drawable/img"
                 android:visibility="visible"
                 app:tint="@color/white" />
         </androidx.appcompat.widget.Toolbar>
@@ -48,7 +48,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@color/white"
-        android:theme="@style/NavigationView"
         app:headerLayout="@layout/nav_header"
         app:itemTextColor="@color/black"
         app:itemBackground="@color/DarkBlue"

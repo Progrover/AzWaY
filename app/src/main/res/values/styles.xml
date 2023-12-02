@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="Base.Theme.AzWaY" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/DarkBlue</item>
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
+    <style name="Theme.AzWaY" parent="Base.Theme.AzWaY">
+        <item name="android:statusBarColor">@color/DarkBlue</item>
+        <item name="colorControlNormal">@color/white</item>
+    </style>
 
     <style name="Toolbar">
         <item name="android:layout_width">match_parent</item>
@@ -7,6 +16,7 @@
         <item name="android:background">@color/white</item>
         <item name="android:layout_gravity">top</item>
     </style>
+
     <style name="circleImageView" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>

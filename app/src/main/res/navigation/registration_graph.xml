@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="com.example.azway.fragments.registration.confirm.ConfirmPhoneFragment"
+        android:name="com.msaharov.azway.fragments.registration.confirm.ConfirmPhoneFragment"
         android:label="fragment_registration"
         tools:layout="@layout/fragment_phone_confirm" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment2"
-        android:name="com.example.azway.fragments.main.MainFragment"
+        android:name="com.msaharov.azway.fragments.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
 </navigation>

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/advListFragment"
-        android:name="com.example.azway.fragments.advList.AdvListFragment"
+        android:name="com.msaharov.azway.fragments.advList.AdvListFragment"
         android:label="fragment_adv_list"
         tools:layout="@layout/fragment_adv_list" />
 </navigation>

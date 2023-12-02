@@ -31,10 +31,10 @@ public class PhoneFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        getWindow().setNavigationBarColor(getResources().getColor(R.color.black));
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reg);
+//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+//        getWindow().setNavigationBarColor(getResources().getColor(R.color.black));
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_reg);
         init();
         return inflater.inflate(R.layout.fragment_phone, container, false);
     }
@@ -45,60 +45,60 @@ public class PhoneFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(PhoneViewModel.class);
     }
     private void init() {
-        btnRegister = findViewById(R.id.BTNReg);
-        mailText = findViewById(R.id.mailET);
-        passText = findViewById(R.id.passET1);
-        backBTN = findViewById(R.id.backBTN);
-        pass2Text = findViewById(R.id.passET2);
-        nameText = findViewById(R.id.nameET);
+//        btnRegister = findViewById(R.id.BTNReg);
+//        mailText = findViewById(R.id.mailET);
+//        passText = findViewById(R.id.passET1);
+//        backBTN = findViewById(R.id.backBTN);
+//        pass2Text = findViewById(R.id.passET2);
+//        nameText = findViewById(R.id.nameET);
         initListeners();
     }
 
     private void initListeners() {
-        backBTN.setOnClickListener(view -> startActivity(new Intent(RegistrationActivity.this, AuthActivity.class)));
-
-        btnRegister.setOnClickListener(view -> {
-            if (nameText.getText().toString().equals("")) {
-                Toast.makeText(getApplicationContext(), "Введите никнейм", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            if (mailText.getText().toString().equals("")) {
-                Toast.makeText(getApplicationContext(), "Введите почту", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            if (!isEmailValid(mailText.getText().toString())) {
-                Toast.makeText(getApplicationContext(), "Введите корректную почту", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            if (passText.getText().toString().length() < 8) {
-                Toast.makeText(getApplicationContext(), "В пароле должно быть 8 и более символов", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            if (passText.getText().toString().equals("")) {
-                Toast.makeText(getApplicationContext(), "Введите пароль", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            if (pass2Text.getText().toString().equals("")) {
-                Toast.makeText(getApplicationContext(), "Подтвердите пароль", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            if (!passText.getText().toString().equals(pass2Text.getText().toString())) {
-                Toast.makeText(getApplicationContext(), "Подтвердите пароль", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            AppwriteManager.INSTANCE.registerAccount(mailText.getText().toString(), passText.getText().toString(), nameText.getText().toString(), AppwriteManager.INSTANCE.getContinuation((tokenResult, exception) -> {
-                Log.d("AppW Result: ",  String.valueOf(tokenResult));
-                Log.e("AppW Exception: ",  String.valueOf(exception));
-
-                if (exception != null)
-                {
-                    //RegistrationActivity.this.runOnUiThread(() -> Toast.makeText(RegistrationActivity.this, "Произошла ошибка", Toast.LENGTH_SHORT).show());
-                }
-                else {
-                    startActivity(new Intent(ConfirmPhoneFragment.this, MainFragment.class));}
-            }));
-        });
+//        backBTN.setOnClickListener(view -> startActivity(new Intent(RegistrationActivity.this, AuthActivity.class)));
+//
+//        btnRegister.setOnClickListener(view -> {
+//            if (nameText.getText().toString().equals("")) {
+//                Toast.makeText(getApplicationContext(), "Введите никнейм", Toast.LENGTH_SHORT).show();
+//                return;
+//            }
+//            if (mailText.getText().toString().equals("")) {
+//                Toast.makeText(getApplicationContext(), "Введите почту", Toast.LENGTH_SHORT).show();
+//                return;
+//            }
+//            if (!isEmailValid(mailText.getText().toString())) {
+//                Toast.makeText(getApplicationContext(), "Введите корректную почту", Toast.LENGTH_SHORT).show();
+//                return;
+//            }
+//            if (passText.getText().toString().length() < 8) {
+//                Toast.makeText(getApplicationContext(), "В пароле должно быть 8 и более символов", Toast.LENGTH_SHORT).show();
+//                return;
+//            }
+//            if (passText.getText().toString().equals("")) {
+//                Toast.makeText(getApplicationContext(), "Введите пароль", Toast.LENGTH_SHORT).show();
+//                return;
+//            }
+//            if (pass2Text.getText().toString().equals("")) {
+//                Toast.makeText(getApplicationContext(), "Подтвердите пароль", Toast.LENGTH_SHORT).show();
+//                return;
+//            }
+//            if (!passText.getText().toString().equals(pass2Text.getText().toString())) {
+//                Toast.makeText(getApplicationContext(), "Подтвердите пароль", Toast.LENGTH_SHORT).show();
+//                return;
+//            }
+//
+//            AppwriteManager.INSTANCE.registerAccount(mailText.getText().toString(), passText.getText().toString(), nameText.getText().toString(), AppwriteManager.INSTANCE.getContinuation((tokenResult, exception) -> {
+//                Log.d("AppW Result: ",  String.valueOf(tokenResult));
+//                Log.e("AppW Exception: ",  String.valueOf(exception));
+//
+//                if (exception != null)
+//                {
+//                    //RegistrationActivity.this.runOnUiThread(() -> Toast.makeText(RegistrationActivity.this, "Произошла ошибка", Toast.LENGTH_SHORT).show());
+//                }
+//                else {
+//                    startActivity(new Intent(ConfirmPhoneFragment.this, MainFragment.class));}
+//            }));
+//        });
     }
     boolean isEmailValid(CharSequence email) {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();

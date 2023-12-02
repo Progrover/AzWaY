@@ -1,4 +1,4 @@
-package com.example.azway.fragments.signIn;
+package com.msaharov.azway.fragments.signIn;
 
 import androidx.lifecycle.ViewModel;
 
