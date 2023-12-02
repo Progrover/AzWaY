@@ -19,6 +19,12 @@
         <item
             android:id="@+id/about_company"
             android:title="О компании" />
+        <item
+            android:id="@+id/autorization"
+            android:title="Авторизация" />
+        <item
+            android:id="@+id/registration"
+            android:title="Регистрация" />
 
     </group>
 </menu>

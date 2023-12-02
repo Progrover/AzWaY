@@ -7,4 +7,9 @@
         <item name="android:background">@color/white</item>
         <item name="android:layout_gravity">top</item>
     </style>
+    <style name="circleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
 </resources>

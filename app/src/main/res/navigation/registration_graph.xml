@@ -9,7 +9,7 @@
         android:id="@+id/registrationFragment"
         android:name="com.example.azway.fragments.registration.confirm.ConfirmPhoneFragment"
         android:label="fragment_registration"
-        tools:layout="@layout/fragment_registration" >
+        tools:layout="@layout/fragment_phone_confirm" >
         <action
             android:id="@+id/action_registrationFragment_to_mainFragment2"
             app:destination="@id/mainFragment2" />

@@ -1,7 +1,7 @@
 package com.example.azway.managers
 
 import android.util.Log
-import com.example.azway.AppwriteClient
+import com.msaharov.azway.AppwriteClient
 import io.appwrite.services.Account
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -42,7 +42,7 @@ object AppwriteManager {
         )
 
     }
-    suspend fun getAccount(): io.appwrite.models.Account {
+    suspend fun getAccount(): io.appwrite.models.User<Map<String, Any>> {
         val client = AppwriteClient.getClient()
         val account = Account(client)
         return account.get()

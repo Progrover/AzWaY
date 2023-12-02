@@ -54,12 +54,9 @@ public class PhoneFragment extends Fragment {
         initListeners();
     }
 
-    //this function initializes all listeners of the class.
-    // The code in listeners is triggered only at certain events
     private void initListeners() {
         backBTN.setOnClickListener(view -> startActivity(new Intent(RegistrationActivity.this, AuthActivity.class)));
-        //if we clicked on the login button,
-        //we check all the fields for correctness and send them for registration to firebase.
+
         btnRegister.setOnClickListener(view -> {
             if (nameText.getText().toString().equals("")) {
                 Toast.makeText(getApplicationContext(), "Введите никнейм", Toast.LENGTH_SHORT).show();
