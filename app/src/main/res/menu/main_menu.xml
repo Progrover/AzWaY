@@ -6,25 +6,20 @@
         android:checkableBehavior="single"
         android:id="@+id/menu_top">
         <item
-            android:id="@+id/search"
+            android:id="@+id/search_graph"
             android:title="Поиск объекта" />
 
         <item
-            android:id="@+id/orders"
+            android:id="@+id/orders_graph"
             android:title="Заказы" />
 
         <item
-            android:id="@+id/my_objects"
+            android:id="@+id/objects_graph"
             android:title="Мои объекты" />
         <item
-            android:id="@+id/about_company"
+            android:id="@+id/company_graph"
             android:title="О компании" />
-        <item
-            android:id="@+id/autorization"
-            android:title="Авторизация" />
-        <item
-            android:id="@+id/registration"
-            android:title="Регистрация" />
+
 
     </group>
 </menu>

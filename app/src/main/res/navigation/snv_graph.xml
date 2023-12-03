@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/snv_graph">
+    android:id="@+id/snv_graph"
+    app:startDestination="@id/search_graph">
 
-    <include app:graph="@navigation/registration_graph" />
     <include app:graph="@navigation/search_graph" />
     <include app:graph="@navigation/objects_graph" />
     <include app:graph="@navigation/orders_graph" />
-    <include app:graph="@navigation/auto_graph" />
+    <include app:graph="@navigation/company_graph" />
 </navigation>

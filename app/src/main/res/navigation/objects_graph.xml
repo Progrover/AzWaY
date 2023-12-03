@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/objects_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/objects_graph"
+    app:startDestination="@id/myObjectsFragment">
 
+    <fragment
+        android:id="@+id/myObjectsFragment"
+        android:name="com.msaharov.azway.fragments.myObjects.MyObjectsFragment"
+        android:label="fragment_my_objects"
+        tools:layout="@layout/fragment_my_objects" />
 </navigation>

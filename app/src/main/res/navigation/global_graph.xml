@@ -6,6 +6,28 @@
     app:startDestination="@id/mainFragment">
 
     <fragment
+        android:id="@+id/phoneFragment"
+        android:name="com.msaharov.azway.fragments.registration.phone.PhoneFragment"
+        android:label="fragment_phone"
+        tools:layout="@layout/fragment_phone" >
+        <action
+            android:id="@+id/action_phoneFragment_to_confirmPhoneFragment2"
+            app:destination="@id/confirmPhoneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmPhoneFragment"
+        android:name="com.msaharov.azway.fragments.registration.confirm.ConfirmPhoneFragment"
+        android:label="fragment_phone_confirm"
+        tools:layout="@layout/fragment_phone_confirm" />
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.msaharov.azway.fragments.signIn.SignInFragment"
+        android:label="SignInFragment" >
+        <action
+            android:id="@+id/action_signInFragment_to_phoneFragment"
+            app:destination="@id/phoneFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/mainFragment"
         android:name="com.msaharov.azway.fragments.main.MainFragment"
         android:label="fragment_main"

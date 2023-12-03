@@ -45,12 +45,7 @@ public class PhoneFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(PhoneViewModel.class);
     }
     private void init() {
-//        btnRegister = findViewById(R.id.BTNReg);
-//        mailText = findViewById(R.id.mailET);
-//        passText = findViewById(R.id.passET1);
-//        backBTN = findViewById(R.id.backBTN);
-//        pass2Text = findViewById(R.id.passET2);
-//        nameText = findViewById(R.id.nameET);
+
         initListeners();
     }
 
