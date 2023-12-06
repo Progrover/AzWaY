@@ -1,4 +1,4 @@
-package com.msaharov.azway.fragments.company;
+package com.msaharov.azway.fragments.chats;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -14,24 +14,24 @@ import android.view.ViewGroup;
 
 import com.msaharov.azway.R;
 
-public class CompanyFragment extends Fragment {
+public class ChatsFragment extends Fragment {
 
-    private CompanyViewModel mViewModel;
+    private ChatsViewModel mViewModel;
 
-    public static CompanyFragment newInstance() {
-        return new CompanyFragment();
+    public static ChatsFragment newInstance() {
+        return new ChatsFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_company, container, false);
+        return inflater.inflate(R.layout.fragment_chats, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(CompanyViewModel.class);
+        mViewModel = new ViewModelProvider(this).get(ChatsViewModel.class);
         // TODO: Use the ViewModel
     }
 

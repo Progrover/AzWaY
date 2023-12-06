@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="Base.Theme.AzWaY" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:statusBarColor">@color/DarkBlue</item>
         <item name="colorControlNormal">@color/white</item>
@@ -22,6 +23,11 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <style name="parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
     <style name="NavigationDrawerStyle">
 
         <item name="android:textSize">18dp</item>\<!-- text size in menu-->
@@ -36,6 +42,18 @@
         <!-- item padding right in menu-->
         <item name="android:listPreferredItemPaddingRight">8dp</item>
         <item name="listPreferredItemPaddingRight">8dp</item>
+    </style>
+
+    <style name="RegrModifiedEditText" parent="parent">
+        <item name="android:backgroundTint">@color/DarkBlue</item>
+        <item name="colorControlNormal">@color/DarkBlue</item>
+    </style>
+
+    <style name="LoginTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="android:labelTextSize">10dp</item>
+        <item name="boxStrokeColor">@color/DarkBlue</item>
     </style>
 
 </resources>

@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.orders.OrdersFragment">
+    android:background="@color/fragment_background_color"
+    tools:context=".fragments.like.LikesFragment">
 
     <TextView
         android:layout_width="match_parent"

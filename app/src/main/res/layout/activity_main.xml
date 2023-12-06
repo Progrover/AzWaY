@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         app:defaultNavHost="true"
         app:navGraph="@navigation/global_graph"
-        tools:context=".activities.MainActivity" />
+        tools:context=".activities.MainActivity"/>
 
 </FrameLayout>
 

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_graph"
+    app:startDestination="@id/noProfileFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.msaharov.azway.fragments.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/noProfileFragment"
+        android:name="com.msaharov.azway.fragments.noProfile.NoProfileFragment"
+        android:label="fragment_no_profile"
+        tools:layout="@layout/fragment_no_profile" >
+        <action
+            android:id="@+id/action_noProfileFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_noProfileFragment_to_registrationDataFragment"
+            app:destination="@id/registrationDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.msaharov.azway.fragments.signIn.SignInFragment"
+        android:label="SignInFragment" >
+        <action
+            android:id="@+id/action_signInFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationDataFragment"
+        android:name="com.msaharov.azway.fragments.registration.data.RegistrationDataFragment"
+        android:label="fragment_registration_data"
+        tools:layout="@layout/fragment_registration_data" >
+        <action
+            android:id="@+id/action_registrationDataFragment_to_confirmPhoneFragment"
+            app:destination="@id/confirmPhoneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmPhoneFragment"
+        android:name="com.msaharov.azway.fragments.registration.confirm.ConfirmPhoneFragment"
+        android:label="fragment_phone_confirm"
+        tools:layout="@layout/fragment_phone_confirm" >
+        <action
+            android:id="@+id/action_confirmPhoneFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+</navigation>

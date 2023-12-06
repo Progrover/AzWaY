@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="transparent">#00FFFFFF</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="DarkBlue">#2b67f6</color>
+    <color name="LightBlue">#D8FFFA</color>
+    <color name="menu_color">#FFFFFF</color>
+    <color name="LightBlue_for_buttons">#4371E6</color>
+    <color name="_123123">#535353</color>
+    <color name="fragment_background_color">#FAFAFA</color>
 
 </resources>

@@ -47,5 +47,13 @@ object AppwriteManager {
         val account = Account(client)
         return account.get()
     }
+    suspend fun login(mail: String, password: String) {
+        val client = AppwriteClient.getClient()
+        val account = Account(client)
+        account.createEmailSession(
+                email = mail,
+                password = password
+        )
+    }
 
 }

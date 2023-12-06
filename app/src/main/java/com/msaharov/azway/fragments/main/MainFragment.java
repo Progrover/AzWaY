@@ -48,21 +48,27 @@ public class MainFragment extends Fragment {
 
         NavHostFragment host = (NavHostFragment) getChildFragmentManager().findFragmentById(R.id.host_fragment);
         NavController navController = host.getNavController();
-        NavigationUI.setupWithNavController(binding.navView, navController);
-        binding.menuIV.setOnClickListener(v -> {
-            Log.d("Listener", "listened");
-            if (!binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                openDrawerLayout();
+        NavigationUI.setupWithNavController(binding.mainBNV, navController);
+        binding.mainBNV.setOnItemReselectedListener(item -> {
+            if (item.getItemId() == R.id.search_graph) {
+                navController.popBackStack(R.id.advListFragment, false);
             }
-            else {binding.drawerLayout.closeDrawer(GravityCompat.START);}
+            if (item.getItemId() == R.id.likes_graph) {
+                navController.popBackStack(R.id.likesFragment, false);
+            }
+            if (item.getItemId() == R.id.objects_graph) {
+                navController.popBackStack(R.id.myObjectsFragment, false);
+            }
+            if (item.getItemId() == R.id.messages_graph) {
+                navController.popBackStack(R.id.chatsFragment, false);
+            }
+            if (item.getItemId() == R.id.profile_graph) {
+                navController.popBackStack(R.id.profileFragment, false);
+            }
         });
 
 
     }
 
-    public void openDrawerLayout() {
-        binding.drawerLayout.openDrawer(GravityCompat.START);
-        binding.drawerLayout.open();
-    }
 
-}
+    }

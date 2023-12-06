@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/snv_graph"
     app:startDestination="@id/search_graph">
-
     <include app:graph="@navigation/search_graph" />
+    <include app:graph="@navigation/likes_graph" />
     <include app:graph="@navigation/objects_graph" />
-    <include app:graph="@navigation/orders_graph" />
-    <include app:graph="@navigation/company_graph" />
+    <include app:graph="@navigation/messages_graph" />
+    <include app:graph="@navigation/profile_graph" />
 </navigation>

@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:showIn="navigation_view">
     <group
         android:checkableBehavior="single"
         android:id="@+id/menu_top">
         <item
             android:id="@+id/search_graph"
-            android:title="Поиск объекта" />
+            android:icon="@drawable/house_menu"
+            app:itemIconSize="50dp"
+            app:showAsAction="withText"
+            android:title="Поиск"/>
 
         <item
-            android:id="@+id/orders_graph"
-            android:title="Заказы" />
+            android:id="@+id/likes_graph"
+            android:icon="@drawable/favorite_blue"
+            app:itemIconSize="30dp"
+            android:title="Избранное" />
 
         <item
             android:id="@+id/objects_graph"
+            android:icon="@drawable/plus_circle"
+            app:itemIconSize="40dp"
             android:title="Мои объекты" />
         <item
-            android:id="@+id/company_graph"
-            android:title="О компании" />
+            android:id="@+id/messages_graph"
+            android:icon="@drawable/message_circle_svgrepo_com"
+            app:itemIconSize="40dp"
+            android:title="Сообщения" />
+        <item
+            android:id="@+id/profile_graph"
+            android:icon="@drawable/login_icon"
+            app:itemIconSize="40dp"
+            android:title="Профиль" />
 
 
     </group>

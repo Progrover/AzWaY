@@ -3,4 +3,6 @@
     <string name="registration">Регистрация</string>
     <string name="enter_your_phone_number">Введите ваш номер телефона</string>
     <string name="done">Готово</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="password">Введите пароль</string>
 </resources>
