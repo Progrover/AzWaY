@@ -5,4 +5,6 @@
     <string name="done">Готово</string>
     <string name="phone_number">Номер телефона</string>
     <string name="password">Введите пароль</string>
+    <string name="men">Мужской</string>
+    <string name="women">Женский</string>
 </resources>

@@ -9,5 +9,7 @@
     <color name="LightBlue_for_buttons">#4371E6</color>
     <color name="_123123">#535353</color>
     <color name="fragment_background_color">#FAFAFA</color>
+    <color name="grey_for_fields">#f2f1ef</color>
+    <color name="grey_for_hint">#6A6A69</color>
 
 </resources>

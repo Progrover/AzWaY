@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_noProfileFragment_to_registrationDataFragment"
             app:destination="@id/registrationDataFragment" />
+        <action
+            android:id="@+id/action_noProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
