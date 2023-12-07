@@ -1,4 +1,4 @@
-package com.msaharov.azway;
+package com.msaharov.azway.models;
 
 import android.app.Application;
 

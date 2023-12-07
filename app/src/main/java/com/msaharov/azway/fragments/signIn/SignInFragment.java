@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.msaharov.azway.R;
 import com.msaharov.azway.databinding.FragmentSignInBinding;
+import com.msaharov.azway.fragments.registration.data.RegistrationDataFragment;
 import com.msaharov.azway.managers.AppwriteManager;
 
 import java.util.UUID;
@@ -89,8 +90,8 @@ public class SignInFragment extends Fragment {
                         Navigation.findNavController(v).navigate(R.id.action_signInFragment_to_profileFragment);
                     });
                 }));
-            }
-        });
+           }
+      });
 
     }
 }
