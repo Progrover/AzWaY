@@ -38,15 +38,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:orientation="vertical">
+            android:layout_marginTop="45dp"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="150dp">
 
             <TextView
                 android:id="@+id/fill_dataTV"
@@ -55,6 +57,7 @@
                 android:layout_marginBottom="40dp"
                 android:gravity="center_horizontal"
                 android:text="Основные данные профиля"
+                android:textColor="@color/black"
                 android:textSize="23dp"
                 android:textStyle="bold" />
 
@@ -64,6 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:text="Введите имя"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -86,7 +90,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:text="Введите почту"
+                android:text="Введите адрес электронной почты"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -110,6 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:text="Введите номер телефона"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -117,24 +123,25 @@
                 android:id="@+id/phoneET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
-                android:typeface="monospace"
-                app:mask="+7(###)###-##-##"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/fields_to_fill"
+                android:inputType="phone"
                 android:paddingHorizontal="15dp"
                 android:paddingVertical="10dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/grey_for_hint"
                 android:textSize="18dp"
-                />
+                android:typeface="monospace"
+                app:mask="+7(###)###-##-##" />
 
 
             <TextView
                 android:id="@+id/choose_sexTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="15dp"
                 android:text="Выберите пол"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -145,51 +152,26 @@
                 android:layout_marginBottom="15dp"
                 android:orientation="horizontal">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        app:layout_constraintStart_toStartOf="parent">
+                <RadioButton
+                    android:id="@+id/menRB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:buttonTint="@color/DarkBlue"
+                    android:text="@string/men"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
 
-                        <RadioButton
-                            android:id="@+id/menRB"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:buttonTint="@color/DarkBlue" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/men"
-                            android:textSize="18dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="4dp"
-                        android:orientation="horizontal"
-                        app:layout_constraintEnd_toEndOf="parent">
-
-                        <RadioButton
-                            android:id="@+id/womenRB"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:buttonTint="@color/DarkBlue" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/women"
-                            android:textSize="18dp" />
-                    </LinearLayout>
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
+                <RadioButton
+                    android:id="@+id/womenRB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:buttonTint="@color/DarkBlue"
+                    android:text="@string/women"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
             </RadioGroup>
 
             <TextView
@@ -197,7 +179,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:text="Укажите возраст"
+                android:text="Укажите дату рождения"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -206,17 +189,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:inputType="number"
                 android:background="@drawable/fields_to_fill"
                 android:hint="Заполните поле"
+                android:inputType="number"
                 android:paddingHorizontal="15dp"
                 android:paddingVertical="10dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/grey_for_hint"
                 android:textSize="18dp"
                 app:dateFormat="ddMMyyyy"
-                app:dividerCharacter="minus"/>
-
+                app:dividerCharacter="minus" />
 
 
         </LinearLayout>
@@ -227,7 +209,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/sigh_in_button"
         android:gravity="center"
         android:text="Продолжить"
@@ -235,9 +217,7 @@
         android:textColor="@color/white"
         android:textSize="17dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="-9dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

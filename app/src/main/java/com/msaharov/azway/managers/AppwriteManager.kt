@@ -3,6 +3,7 @@ package com.msaharov.azway.managers
 import android.util.Log
 import com.msaharov.azway.AppwriteClient
 import io.appwrite.services.Account
+import io.appwrite.services.Databases
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import java.util.UUID
@@ -29,18 +30,34 @@ object AppwriteManager {
     suspend fun registerAccount(login: String, password: String, name: String) {
         val client = AppwriteClient.getClient()
         val account = Account(client)
+        val userID = UUID.randomUUID().toString()
+        val databases = Databases(client)
         val user = account.create(
-                userId = UUID.randomUUID().toString(),
+                userId = userID,
                 email = login,
                 password = password,
-                name = name
+                name = name,
+
         )
         Log.e("user", user.email + user.id)
         account.createEmailSession(
                 email = login,
                 password = password
         )
+        try {
+            databases.createDocument(
+                    databaseId = "6571856e20d1ed19c405",
+                    collectionId = "64525c2351930e2d5573",
+                    documentId = userID,
+                    data = mapOf(
+                            "accountId" to userID,
+                            "userName" to user.name
+                    )
+            )
+        } catch (e: Exception) {
+            Log.e("Appwrite", "Error: " + e.message)
 
+        }
     }
     suspend fun getAccount(): io.appwrite.models.User<Map<String, Any>> {
         val client = AppwriteClient.getClient()
