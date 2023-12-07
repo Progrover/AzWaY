@@ -35,16 +35,17 @@
     </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        android:layout_marginHorizontal="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="left"
             android:layout_marginTop="80dp"
             android:orientation="vertical">
 
@@ -188,6 +189,13 @@
                             android:textSize="18dp" />
                     </LinearLayout>
 
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_begin="20dp" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </RadioGroup>
@@ -205,7 +213,7 @@
                 android:id="@+id/ageET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="200dp"
                 android:inputType="number"
                 android:background="@drawable/fields_to_fill"
                 android:hint="Заполните поле"
@@ -226,7 +234,7 @@
         android:id="@+id/btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/sigh_in_button"
         android:gravity="center"
