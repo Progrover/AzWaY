@@ -11,5 +11,13 @@
     <color name="fragment_background_color">#FAFAFA</color>
     <color name="grey_for_fields">#f2f1ef</color>
     <color name="grey_for_hint">#6A6A69</color>
+    <color name="colorPrimary">#1C1C1C</color>
+    <color name="colorPrimaryDark">#1E1E1E</color>
+    <color name="separator">#353333</color>
+    <color name="colorAccent">#15d5bb</color>
+    <color name="textColor">#303030</color>
+    <color name="lightBackground">#ECF8F6</color>
+
+
 
 </resources>

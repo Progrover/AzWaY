@@ -51,7 +51,7 @@ public class MainFragment extends Fragment {
         NavigationUI.setupWithNavController(binding.mainBNV, navController);
         binding.mainBNV.setOnItemReselectedListener(item -> {
             if (item.getItemId() == R.id.search_graph) {
-                navController.popBackStack(R.id.advListFragment, false);
+                navController.popBackStack(R.id.mapFragment, false);
             }
             if (item.getItemId() == R.id.likes_graph) {
                 navController.popBackStack(R.id.likesFragment, false);
