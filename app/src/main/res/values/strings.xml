@@ -7,4 +7,11 @@
     <string name="password">Введите пароль</string>
     <string name="men">Мужской</string>
     <string name="women">Женский</string>
+    <string name="pansionat">Пансионат</string>
+    <string name="camping">База отдыха</string>
+    <string name="hotel">Отель</string>
+    <string name="flat">Квартира</string>
+    <string name="house">Дом</string>
+    <string name="owner">Собственник</string>
+    <string name="realtor">Риэлтор</string>
 </resources>

@@ -9,5 +9,77 @@
         android:id="@+id/myObjectsFragment"
         android:name="com.msaharov.azway.fragments.myObjects.MyObjectsFragment"
         android:label="fragment_my_objects"
-        tools:layout="@layout/fragment_my_objects" />
+        tools:layout="@layout/fragment_my_objects" >
+        <action
+            android:id="@+id/action_myObjectsFragment_to_chooseOwnerFragment"
+            app:destination="@id/chooseOwnerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseOwnerFragment"
+        android:name="com.msaharov.azway.fragments.addObject.chooseOwner.ChooseOwnerFragment"
+        android:label="fragment_choose_owner"
+        tools:layout="@layout/fragment_choose_owner" >
+        <action
+            android:id="@+id/action_chooseOwnerFragment_to_roomTypeFragment"
+            app:destination="@id/roomTypeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomTypeFragment"
+        android:name="com.msaharov.azway.fragments.addObject.chooseType.RoomTypeFragment"
+        android:label="fragment_room_type"
+        tools:layout="@layout/fragment_room_type" >
+        <action
+            android:id="@+id/action_roomTypeFragment_to_editObjectDataFragment"
+            app:destination="@id/editObjectDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editObjectDataFragment"
+        android:name="com.msaharov.azway.fragments.addObject.editData.EditObjectDataFragment"
+        android:label="fragment_edit_object_data"
+        tools:layout="@layout/fragment_edit_object_data" >
+        <action
+            android:id="@+id/action_editObjectDataFragment_to_roomsNumberFragment"
+            app:destination="@id/roomsNumberFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomsNumberFragment"
+        android:name="com.msaharov.azway.fragments.addObject.rooms.RoomsNumberFragment"
+        android:label="fragment_rooms_number"
+        tools:layout="@layout/fragment_rooms_number" >
+        <action
+            android:id="@+id/action_roomsNumberFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/optionsFragment"
+        android:name="com.msaharov.azway.fragments.addObject.options.OptionsFragment"
+        android:label="fragment_options"
+        tools:layout="@layout/fragment_options" >
+        <action
+            android:id="@+id/action_optionsFragment_to_addRoomPhotosFragment"
+            app:destination="@id/addRoomPhotosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRoomPhotosFragment"
+        android:name="com.msaharov.azway.fragments.addObject.photos.AddRoomPhotosFragment"
+        android:label="fragment_add_room_photos"
+        tools:layout="@layout/fragment_add_room_photos" >
+        <action
+            android:id="@+id/action_addRoomPhotosFragment_to_instructionFragment"
+            app:destination="@id/instructionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructionFragment"
+        android:name="com.msaharov.azway.fragments.addObject.instruction.InstructionFragment"
+        android:label="fragment_instruction"
+        tools:layout="@layout/fragment_instruction" >
+        <action
+            android:id="@+id/action_instructionFragment_to_priceAndTimeFragment"
+            app:destination="@id/priceAndTimeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/priceAndTimeFragment"
+        android:name="com.msaharov.azway.fragments.addObject.priceAndTime.PriceAndTimeFragment"
+        android:label="fragment_price_and_time"
+        tools:layout="@layout/fragment_price_and_time" />
 </navigation>

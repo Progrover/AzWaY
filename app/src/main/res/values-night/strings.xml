@@ -2,4 +2,11 @@
 <resources>
     <string name="phone_number">Номер телефона</string>
     <string name="password">Пароль</string>
+    <string name="pansionat">Пансионат</string>
+    <string name="camping">База отдыха</string>
+    <string name="hotel">Отель</string>
+    <string name="flat">Квартира</string>
+    <string name="house">Дом</string>
+    <string name="owner">Собственник</string>
+    <string name="realtor">Риэлтор</string>
 </resources>
