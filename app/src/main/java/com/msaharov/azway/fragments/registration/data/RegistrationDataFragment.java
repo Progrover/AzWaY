@@ -20,7 +20,14 @@ import android.widget.Toast;
 
 import com.msaharov.azway.R;
 import com.msaharov.azway.databinding.FragmentRegistrationDataBinding;
+import com.msaharov.azway.fragments.signIn.SignInFragment;
 import com.msaharov.azway.managers.AppwriteManager;
+import com.msaharov.azway.models.RegUser;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class RegistrationDataFragment extends Fragment {
 
@@ -59,7 +66,7 @@ public class RegistrationDataFragment extends Fragment {
             String name = binding.nameET.getText().toString();
             String email = binding.mailET.getText().toString();
             String phone_number = binding.phoneET.getText().toString();
-            String birthday = binding.ageET.getText().toString();
+            String birthday = binding.birthdayET.getText().toString();
             if (name.equals("")) {
                 Toast.makeText(RegistrationDataFragment.this.getContext(), "Введите имя", Toast.LENGTH_SHORT).show();
                 return;
@@ -84,12 +91,18 @@ public class RegistrationDataFragment extends Fragment {
                 Toast.makeText(RegistrationDataFragment.this.getContext(), "Выберите Ваш пол", Toast.LENGTH_SHORT).show();
                 return;
             }
+
             Bundle bundle = new Bundle();
-            bundle.putSerializable("name", name);
-            bundle.putSerializable("email", email);
-            bundle.putSerializable("phone_number", phone_number);
-            bundle.putSerializable("birthday", birthday);
-            bundle.putSerializable("sex", sex);
+            Calendar cal = Calendar.getInstance();
+            SimpleDateFormat sdf = new SimpleDateFormat("dd.mm.yyyy");
+            try {
+                cal.setTime(sdf.parse(birthday));
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
+            }
+            String email_required = phone_number.substring(1) + "@account.ru";
+            RegUser user = new RegUser(name, sex, email, email_required, phone_number, cal, null);
+            bundle.putSerializable("user", user);
             Navigation.findNavController(v).navigate(R.id.action_registrationDataFragment_to_confirmPhoneFragment, bundle);
 
 

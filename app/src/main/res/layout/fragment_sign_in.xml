@@ -54,46 +54,51 @@
             android:id="@+id/textInputEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/black"
+            android:textColorHint="@color/grey_for_hint"
+            android:layout_marginBottom="10dp"
             android:theme="@style/LoginTextInputLayoutStyle"
             app:counterMaxLength="12"
             app:boxStrokeColor="@color/DarkBlue">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:id="@+id/phoneET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/DarkBlue"
                 android:hint="@string/phone_number"
                 android:inputType="phone"
                 android:maxLines="1"
                 android:text="+7"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="10dp"
                 android:textColor="@color/black"
-                android:textColorHighlight="@color/DarkBlue"
-                android:textColorHint="@color/DarkBlue"
-                android:theme="@style/RegrModifiedEditText" />
+                android:textColorHint="@color/grey_for_hint"
+                android:textSize="18dp"                android:background="@drawable/fields_to_fill"
+                 />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/passwordInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/black"
             android:theme="@style/LoginTextInputLayoutStyle"
-            app:boxStrokeColor="@color/DarkBlue">
+            app:boxStrokeColor="@color/DarkBlue"
+            android:textColorHint="@color/grey_for_hint"
+            android:layout_marginBottom="10dp">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:id="@+id/passwordET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/DarkBlue"
+                android:background="@drawable/fields_to_fill"
                 android:hint="@string/password"
                 android:inputType="textPassword"
                 android:maxLines="1"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="10dp"
                 android:textColor="@color/black"
-                android:textColorHighlight="@color/DarkBlue"
-                android:textColorHint="@color/DarkBlue"
-                android:theme="@style/RegrModifiedEditText" />
+                android:textColorHint="@color/grey_for_hint"
+                android:textSize="18dp"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <FrameLayout

@@ -48,7 +48,16 @@
         android:label="fragment_phone_confirm"
         tools:layout="@layout/fragment_phone_confirm" >
         <action
-            android:id="@+id/action_confirmPhoneFragment_to_profileFragment"
+            android:id="@+id/action_confirmPhoneFragment_to_passwordFragment"
+            app:destination="@id/passwordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordFragment"
+        android:name="com.msaharov.azway.fragments.registration.password.PasswordFragment"
+        android:label="fragment_password"
+        tools:layout="@layout/fragment_password" >
+        <action
+            android:id="@+id/action_passwordFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
     </fragment>
 </navigation>
