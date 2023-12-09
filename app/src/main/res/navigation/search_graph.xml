@@ -3,11 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/search_graph"
-    app:startDestination="@id/advListFragment">
+    app:startDestination="@id/mapFragment">
 
     <fragment
-        android:id="@+id/advListFragment"
-        android:name="com.msaharov.azway.fragments.advList.AdvListFragment"
-        android:label="fragment_adv_list"
-        tools:layout="@layout/fragment_adv_list" />
+        android:id="@+id/mapFragment"
+        android:name="com.msaharov.azway.fragments.map.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" >
+
+        <action
+            android:id="@+id/action_mapFragment_to_marksListFragment"
+            app:destination="@id/marksListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/marksListFragment"
+        android:name="com.msaharov.azway.fragments.marksList.MarksListFragment"
+        android:label="fragment_marks_list"
+        tools:layout="@layout/fragment_marks_list" >
+        <action
+            android:id="@+id/action_marksListFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
 </navigation>

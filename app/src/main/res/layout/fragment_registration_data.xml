@@ -37,16 +37,16 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
             android:gravity="left"
+            android:layout_marginTop="80dp"
             android:orientation="vertical">
 
             <TextView
@@ -56,7 +56,6 @@
                 android:layout_marginBottom="40dp"
                 android:gravity="center_horizontal"
                 android:text="Основные данные профиля"
-                android:textColor="@color/black"
                 android:textSize="23dp"
                 android:textStyle="bold" />
 
@@ -66,7 +65,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:text="Введите имя"
-                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -90,7 +88,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:text="Введите почту"
-                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -114,7 +111,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:text="Введите номер телефона"
-                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -122,15 +118,16 @@
                 android:id="@+id/phoneET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/fields_to_fill"
                 android:inputType="phone"
+                android:typeface="monospace"
+                app:mask="+7(###)###-##-##"
+                android:background="@drawable/fields_to_fill"
                 android:paddingHorizontal="15dp"
                 android:paddingVertical="10dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/grey_for_hint"
                 android:textSize="18dp"
-                app:mask="+7##########"
-                android:layout_marginBottom="20dp"/>
+                />
 
 
             <TextView
@@ -139,7 +136,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:text="Выберите пол"
-                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -150,33 +146,57 @@
                 android:layout_marginBottom="15dp"
                 android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/menRB"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/DarkBlue"
-                    android:text="@string/men"
-                    android:textSize="17dp"
-                    android:layout_marginRight="40dp"
-                    android:textColor="@color/black" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent">
 
-                <RadioButton
-                    android:id="@+id/womenRB"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/DarkBlue"
-                    android:text="@string/women"
-                    android:textSize="17dp"
-                    android:layout_marginLeft="40dp"
-                    android:textColor="@color/black" />
+                        <RadioButton
+                            android:id="@+id/menRB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/DarkBlue" />
 
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintGuide_begin="20dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/men"
+                            android:textSize="18dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/womenRB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/DarkBlue" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/women"
+                            android:textSize="18dp" />
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_begin="20dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </RadioGroup>
 
@@ -185,35 +205,37 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:text="Укажите дату рождения"
-                android:textColor="@color/black"
+                android:text="Укажите возраст"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
-            <br.com.sapereaude.maskedEditText.MaskedEditText
-                android:id="@+id/birthdayET"
+            <com.msa.dateedittext.DateEditText
+                android:id="@+id/ageET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="200dp"
+                android:inputType="number"
                 android:background="@drawable/fields_to_fill"
-                android:inputType="phone"
+                android:hint="Заполните поле"
                 android:paddingHorizontal="15dp"
                 android:paddingVertical="10dp"
                 android:textColor="@color/black"
-                android:hint="ddmmYYYY"
                 android:textColorHint="@color/grey_for_hint"
                 android:textSize="18dp"
-                app:mask="##.##.####"
-                android:layout_marginBottom="210dp"/>
+                app:dateFormat="ddMMyyyy"
+                app:dividerCharacter="minus"/>
+
+
+
         </LinearLayout>
     </ScrollView>
-
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/sigh_in_button"
         android:gravity="center"
         android:text="Продолжить"
@@ -222,7 +244,7 @@
         android:textSize="17dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent" />
 
 

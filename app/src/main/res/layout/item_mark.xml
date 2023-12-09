@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clickable="true"
+    app:cardCornerRadius="20dp"
+    android:layout_marginVertical="10dp"
+    android:layout_marginHorizontal="5dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:backgroundTint="@color/lightBackground"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/photoIV"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/DarkBlue"
+            tools:scaleType="centerCrop"
+            tools:src="@drawable/img" />
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginVertical="14dp"
+            android:layout_marginHorizontal="14dp"
+            android:paddingStart="0dp"
+>
+
+            <TextView
+                android:id="@+id/nameTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:textStyle="bold"
+                android:textColor="@color/textColor"
+                tools:text="Футбол" />
+
+
+
+
+            <TextView
+                android:id="@+id/descTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:lines="1"
+                android:layout_gravity="top"
+                android:textColor="@color/textColor"
+                android:textSize="12sp"
+                tools:text="Банальнкой и кадровой базы." />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
