@@ -62,13 +62,15 @@ object AppwriteManager {
                 userId = userID,
                 email = email_required,
                 password = password,
-                name = name,
+                name = name
 
                 )
         Log.e("user", user.email + user.id)
         account.createEmailSession(
-                email = email,
+                email = email_required,
                 password = password
+
+
         )
         try {
             databases.createDocument(
@@ -77,8 +79,8 @@ object AppwriteManager {
                     documentId = userID,
                     data = mapOf(
                             "id" to userID,
-                            "name" to user.name,
-                            "email" to user.email,
+                            "name" to name,
+                            "email" to email,
                             "phone_number" to phone_number,
                             "email_required" to email_required,
                             "sex" to sex,
