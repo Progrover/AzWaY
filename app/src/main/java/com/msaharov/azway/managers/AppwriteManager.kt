@@ -1,12 +1,15 @@
 package com.msaharov.azway.managers
 
+import android.os.Build
 import android.util.Log
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.MutableLiveData
 import com.msaharov.azway.models.AppwriteClient
 import com.msaharov.azway.models.Cursor
 import com.msaharov.azway.models.Mark
 import com.msaharov.azway.models.RegUser
 import com.yandex.mapkit.geometry.Point
+import io.appwrite.ID
 import io.appwrite.Query
 import io.appwrite.exceptions.AppwriteException
 import io.appwrite.models.DocumentList
@@ -14,11 +17,14 @@ import io.appwrite.services.Account
 import io.appwrite.services.Databases
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-import java.util.Calendar
+import java.time.ZoneId
+import java.time.ZonedDateTime
+import java.util.Date
 import java.util.UUID
 import java.util.function.BiConsumer
 import kotlin.coroutines.Continuation
 import kotlin.coroutines.CoroutineContext
+
 
 object AppwriteManager {
     object Databases {
@@ -46,48 +52,45 @@ object AppwriteManager {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     suspend fun registerAccount(user : RegUser) {
         val client = AppwriteClient.getClient()
         val account = Account(client)
         val password = user.password
         val email = user.email
-        val phone_number = user.phone_number
+        val phoneNumber = user.phoneNumber
         val sex = user.sex
         val name = user.name
-        val birthday = user.birthday
-        val email_required = user.email_required
-        val userID = UUID.randomUUID().toString()
+        val birthday = Date(user.birthday.timeInMillis + 14400000)
+        val birthdayDateZone = birthday.toInstant().atZone(ZoneId.systemDefault()).toOffsetDateTime().toString()
+        val emailFromPhone = user.emailFromPhone
         val databases = Databases(client)
         val user = account.create(
-                userId = userID,
-                email = email_required,
+                userId = ID.unique(),
+                email = emailFromPhone,
                 password = password,
                 name = name,
 
                 )
-        Log.e("user", user.email + user.id)
         account.createEmailSession(
-                email = email,
+                email = emailFromPhone,
                 password = password
         )
         try {
             databases.createDocument(
-                    databaseId = "6571856e20d1ed19c405",
-                    collectionId = "65718593dcf902398d89",
-                    documentId = userID,
+                    databaseId = Databases.GENERAL_DATABASE_ID,
+                    collectionId = Collections.USERS_COLLECTION_ID,
+                    documentId = user.id,
                     data = mapOf(
-                            "id" to userID,
-                            "name" to user.name,
-                            "email" to user.email,
-                            "phone_number" to phone_number,
-                            "email_required" to email_required,
+                            "name" to name,
+                            "email" to email,
+                            "phone_number" to phoneNumber,
                             "sex" to sex,
-                            "birthday" to birthday,
-                            "password" to password
+                            "birthday" to birthdayDateZone,
                     )
             )
         } catch (e: Exception) {
-            Log.e("Appwrite", "Error: " + e.message)
+            e.printStackTrace()
 
         }
     }

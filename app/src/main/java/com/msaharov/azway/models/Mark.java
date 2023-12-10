@@ -16,6 +16,8 @@ public class Mark implements Serializable {
     private String name;
     private String desc;
     private Category category;
+    private Integer price;
+
     private ArrayList<String> images = new ArrayList<>();
 
 
@@ -26,6 +28,7 @@ public class Mark implements Serializable {
         this.name = (String) map.get("name");
         this.desc = (String) map.get("desc");
         this.uuid = (String) map.get("$id");
+        this.price = ((Double)map.get("price")).intValue();
         this.images = (ArrayList<String>) map.get("images");
 
         try {
@@ -91,5 +94,13 @@ public class Mark implements Serializable {
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 }

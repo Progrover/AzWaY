@@ -8,12 +8,12 @@ import java.util.Date;
 
 public class RegUser implements Serializable {
 
-    public RegUser(String name, int sex, String email, String email_required, String phone_number, Calendar birthday, String password) {
+    public RegUser(String name, int sex, String email, String emailFromPhone, String phoneNumber, Calendar birthday, String password) {
         this.birthday = birthday;
         this.password = password;
         this.name = name;
-        this.phone_number = phone_number;
-        this.email_required = email_required;
+        this.phoneNumber = phoneNumber;
+        this.emailFromPhone = emailFromPhone;
         this.email = email;
         this.sex = sex;
 
@@ -31,8 +31,8 @@ public class RegUser implements Serializable {
 
     private int sex;
     private String email;
-    private String email_required;
-    private String phone_number;
+    private String emailFromPhone;
+    private String phoneNumber;
     private Calendar birthday;
     private String password;
 
@@ -52,20 +52,20 @@ public class RegUser implements Serializable {
         this.email = email;
     }
 
-    public String getEmail_required() {
-        return email_required;
+    public String getEmailFromPhone() {
+        return emailFromPhone;
     }
 
-    public void setEmail_required(String email_required) {
-        this.email_required = email_required;
+    public void setEmailFromPhone(String emailFromPhone) {
+        this.emailFromPhone = emailFromPhone;
     }
 
-    public String getPhone_number() {
-        return phone_number;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public Calendar getBirthday() {

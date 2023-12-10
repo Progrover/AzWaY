@@ -456,9 +456,11 @@ public class MapFragment extends Fragment implements ClusterListener, MapObjectT
             Mark mark = (Mark) mapObject.getUserData();
             TextView descTV = dialog.findViewById(R.id.descTV);
             TextView nameTV = dialog.findViewById(R.id.nameTV);
+            TextView priceTV = dialog.findViewById(R.id.priceTV);
             ImageView mainPhotoIV = dialog.findViewById(R.id.mainPhotoIV);
             descTV.setText(mark.getDesc());
             nameTV.setText(mark.getName());
+            priceTV.setText("Цена: " + mark.getPrice());
             if (mark.getImages().isEmpty()) {
                 mark.getImages().add("https://i.pinimg.com/originals/15/23/86/152386d3699721e62b78c5fe2960b547.jpg");
             }

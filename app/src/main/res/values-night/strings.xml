@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="phone_number">Номер телефона</string>
+    <string name="phoneNumber">Номер телефона</string>
     <string name="password">Пароль</string>
     <string name="pansionat">Пансионат</string>
     <string name="camping">База отдыха</string>

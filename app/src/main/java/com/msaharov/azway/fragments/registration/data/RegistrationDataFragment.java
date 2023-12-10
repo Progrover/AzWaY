@@ -65,7 +65,7 @@ public class RegistrationDataFragment extends Fragment {
         binding.btn.setOnClickListener(v -> {
             String name = binding.nameET.getText().toString();
             String email = binding.mailET.getText().toString();
-            String phone_number = binding.phoneET.getText().toString();
+            String phoneNumber = binding.phoneET.getText().toString();
             String birthday = binding.birthdayET.getText().toString();
             if (name.equals("")) {
                 Toast.makeText(RegistrationDataFragment.this.getContext(), "Введите имя", Toast.LENGTH_SHORT).show();
@@ -79,7 +79,7 @@ public class RegistrationDataFragment extends Fragment {
                 Toast.makeText(RegistrationDataFragment.this.getContext(), "Введите корректный адрес электронной почты", Toast.LENGTH_SHORT).show();
                 return;
             }
-            if (phone_number.length() < 12) {
+            if (phoneNumber.length() < 12) {
                 Toast.makeText(RegistrationDataFragment.this.getContext(), "Введите корректный номер телефона", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -94,14 +94,14 @@ public class RegistrationDataFragment extends Fragment {
 
             Bundle bundle = new Bundle();
             Calendar cal = Calendar.getInstance();
-            SimpleDateFormat sdf = new SimpleDateFormat("dd.mm.yyyy");
+            SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
             try {
                 cal.setTime(sdf.parse(birthday));
             } catch (ParseException e) {
                 throw new RuntimeException(e);
             }
-            String email_required = phone_number.substring(1) + "@account.ru";
-            RegUser user = new RegUser(name, sex, email, email_required, phone_number, cal, null);
+            String emailFromPhone = phoneNumber.substring(1) + "@account.ru";
+            RegUser user = new RegUser(name, sex, email, emailFromPhone, phoneNumber, cal, null);
             bundle.putSerializable("user", user);
             Navigation.findNavController(v).navigate(R.id.action_registrationDataFragment_to_confirmPhoneFragment, bundle);
 
