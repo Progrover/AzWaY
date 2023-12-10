@@ -66,7 +66,7 @@ public class RegistrationDataFragment extends Fragment {
             String name = binding.nameET.getText().toString();
             String email = binding.mailET.getText().toString();
             String phone_number = binding.phoneET.getText().toString();
-            String birthday = binding.birthdayET.getText().toString();
+            //String birthday = binding.birthdayET.getText().toString();
             if (name.equals("")) {
                 Toast.makeText(RegistrationDataFragment.this.getContext(), "Введите имя", Toast.LENGTH_SHORT).show();
                 return;
@@ -83,23 +83,23 @@ public class RegistrationDataFragment extends Fragment {
                 Toast.makeText(RegistrationDataFragment.this.getContext(), "Введите корректный номер телефона", Toast.LENGTH_SHORT).show();
                 return;
             }
-            if (birthday.length() < 8) {
-                Toast.makeText(RegistrationDataFragment.this.getContext(), "Введите Вашу настоящую дату рождения", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            if (sex == 0) {
-                Toast.makeText(RegistrationDataFragment.this.getContext(), "Выберите Ваш пол", Toast.LENGTH_SHORT).show();
-                return;
-            }
+//            if (birthday.length() < 8) {
+//                Toast.makeText(RegistrationDataFragment.this.getContext(), "Введите Вашу настоящую дату рождения", Toast.LENGTH_SHORT).show();
+//                return;
+//            }
+//            if (sex == 0) {
+//                Toast.makeText(RegistrationDataFragment.this.getContext(), "Выберите Ваш пол", Toast.LENGTH_SHORT).show();
+//                return;
+//            }
 
             Bundle bundle = new Bundle();
             Calendar cal = Calendar.getInstance();
-            SimpleDateFormat sdf = new SimpleDateFormat("dd.mm.yyyy");
-            try {
-                cal.setTime(sdf.parse(birthday));
-            } catch (ParseException e) {
-                throw new RuntimeException(e);
-            }
+//            SimpleDateFormat sdf = new SimpleDateFormat("dd.mm.yyyy");
+//            try {
+//               // cal.setTime(sdf.parse(birthday));
+//            } catch (ParseException e) {
+//                throw new RuntimeException(e);
+//            }
             String email_required = phone_number.substring(1) + "@account.ru";
             RegUser user = new RegUser(name, sex, email, email_required, phone_number, cal, null);
             bundle.putSerializable("user", user);

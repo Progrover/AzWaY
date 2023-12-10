@@ -57,7 +57,7 @@ public class PasswordFragment extends Fragment {
         RegUser user = (RegUser) getArguments().getSerializable("user");
         user.setPassword(binding.passwordET.getText().toString());
 
-        AppwriteManager.INSTANCE.registerAccount(user, AppwriteManager.INSTANCE.getContinuation((s, throwable) -> {
+        AppwriteManager.INSTANCE.registerAccount(user.getEmail(),user.getPassword(), user.getName(), AppwriteManager.INSTANCE.getContinuation((s, throwable) -> {
             Log.d("Result", s);
             Log.e("Exeption", String.valueOf(throwable));
         }));

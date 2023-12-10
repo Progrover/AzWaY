@@ -101,9 +101,6 @@ public class MapFragment extends Fragment implements ClusterListener, MapObjectT
     };
     private ActivityResultLauncher<String> requestPermissionLauncher;
 
-
-    private Bundle filters;
-
     public static double startLon = 37.615560;
     public static double startLat = 55.752220;
     public static float startZoom = 10.0f;
@@ -115,7 +112,6 @@ public class MapFragment extends Fragment implements ClusterListener, MapObjectT
     ClusterizedPlacemarkCollection clusterizedCollection;
     FragmentManager fragmentManager;
     PlacemarkMapObject userLocationPlacemark;
-    LinearLayout loadingLL;
     CustomPoint userLocation;
     private com.google.android.gms.location.FusedLocationProviderClient fusedLocationClientGoogle;
     private com.huawei.hms.location.FusedLocationProviderClient fusedLocationClientHuawei;
@@ -185,7 +181,7 @@ public class MapFragment extends Fragment implements ClusterListener, MapObjectT
                                                 new Animation(Animation.Type.SMOOTH, startAnimationDuration),
                                                 null);
                                     }
-                                    loadingLL.setVisibility(View.GONE);
+                                    binding.loadingLL.setVisibility(View.GONE);
                                     userLocationPlacemark.setGeometry(new Point(location.getLatitude(),
                                             location.getLongitude()));
                                     userLocation = new CustomPoint(location);
@@ -219,7 +215,7 @@ public class MapFragment extends Fragment implements ClusterListener, MapObjectT
                                                 new Animation(Animation.Type.SMOOTH, startAnimationDuration),
                                                 null);
                                     }
-                                    loadingLL.setVisibility(View.GONE);
+                                    binding.loadingLL.setVisibility(View.GONE);
                                     userLocationPlacemark.setGeometry(new Point(location.getLatitude(),
                                             location.getLongitude()));
                                     userLocation = new CustomPoint(location);
@@ -347,9 +343,9 @@ public class MapFragment extends Fragment implements ClusterListener, MapObjectT
         binding.mapview.getMap().addCameraListener(listener);
         mViewModel.visibilityOfLoadingLD.observe(getViewLifecycleOwner(), aBoolean -> {
             if (aBoolean)
-                loadingLL.setVisibility(View.VISIBLE);
+                binding.loadingLL.setVisibility(View.VISIBLE);
             else {
-                loadingLL.setVisibility(View.GONE);
+                binding.loadingLL.setVisibility(View.GONE);
             }
         });
         binding.mapToListBTN.setOnClickListener(v -> {

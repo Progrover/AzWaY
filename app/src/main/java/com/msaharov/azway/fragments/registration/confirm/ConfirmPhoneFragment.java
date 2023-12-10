@@ -49,7 +49,7 @@ public class ConfirmPhoneFragment extends Fragment {
        String code = binding.codeET.getText().toString();
        Bundle bundle = new Bundle();
        bundle.putSerializable("user", (RegUser) getArguments().getSerializable("user"));
-            Navigation.findNavController(v).navigate(R.id.action_confirmPhoneFragment_to_passwordFragment);
+       Navigation.findNavController(v).navigate(R.id.action_confirmPhoneFragment_to_passwordFragment, bundle);
         });
     }
 }

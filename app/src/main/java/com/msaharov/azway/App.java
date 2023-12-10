@@ -1,8 +1,9 @@
-package com.msaharov.azway.models;
+package com.msaharov.azway;
 
 import android.app.Application;
 import android.content.Context;
 
+import com.msaharov.azway.models.AppwriteClient;
 import com.yandex.mapkit.MapKitFactory;
 
 import java.lang.ref.WeakReference;

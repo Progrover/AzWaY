@@ -2,7 +2,7 @@ package com.msaharov.azway.managers
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import com.msaharov.azway.AppwriteClient
+import com.msaharov.azway.models.AppwriteClient
 import com.msaharov.azway.models.Cursor
 import com.msaharov.azway.models.Mark
 import com.yandex.mapkit.geometry.Point
