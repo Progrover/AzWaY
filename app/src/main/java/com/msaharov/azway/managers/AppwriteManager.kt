@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.msaharov.azway.models.AppwriteClient
 import com.msaharov.azway.models.Cursor
 import com.msaharov.azway.models.Mark
+import com.msaharov.azway.models.RegUser
 import com.yandex.mapkit.geometry.Point
 import io.appwrite.Query
 import io.appwrite.exceptions.AppwriteException
@@ -45,31 +46,44 @@ object AppwriteManager {
     }
 
 
-    suspend fun registerAccount(login: String, password: String, name: String) {
+    suspend fun registerAccount(user : RegUser) {
         val client = AppwriteClient.getClient()
         val account = Account(client)
+        val password = user.password
+        val email = user.email
+        val phone_number = user.phone_number
+        val sex = user.sex
+        val name = user.name
+        val birthday = user.birthday
+        val email_required = user.email_required
         val userID = UUID.randomUUID().toString()
         val databases = Databases(client)
         val user = account.create(
                 userId = userID,
-                email = login,
+                email = email_required,
                 password = password,
                 name = name,
 
-        )
+                )
         Log.e("user", user.email + user.id)
         account.createEmailSession(
-                email = login,
+                email = email,
                 password = password
         )
         try {
             databases.createDocument(
-                    databaseId = Databases.GENERAL_DATABASE_ID,
-                    collectionId = Collections.USERS_COLLECTION_ID,
+                    databaseId = "6571856e20d1ed19c405",
+                    collectionId = "65718593dcf902398d89",
                     documentId = userID,
                     data = mapOf(
-                            "accountId" to userID,
-                            "userName" to user.name
+                            "id" to userID,
+                            "name" to user.name,
+                            "email" to user.email,
+                            "phone_number" to phone_number,
+                            "email_required" to email_required,
+                            "sex" to sex,
+                            "birthday" to birthday,
+                            "password" to password
                     )
             )
         } catch (e: Exception) {
@@ -83,9 +97,9 @@ object AppwriteManager {
         return account.get()
     }
     suspend fun getActiveMarksInZone(
-        marksLD: MutableLiveData<ArrayList<Mark>>,
-        topLeftPoint: Point,
-        bottomRightPoint: Point
+            marksLD: MutableLiveData<ArrayList<Mark>>,
+            topLeftPoint: Point,
+            bottomRightPoint: Point
     ) {
         val client = AppwriteClient.getClient()
         val databases = Databases(client)
