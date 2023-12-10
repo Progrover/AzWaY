@@ -66,7 +66,7 @@ public class RegistrationDataFragment extends Fragment {
             String name = binding.nameET.getText().toString();
             String email = binding.mailET.getText().toString();
             String phone_number = binding.phoneET.getText().toString();
-            String birthday = binding.birthdayET.getText().toString();
+            String birthday = binding.ageET.getText().toString();
             if (name.equals("")) {
                 Toast.makeText(RegistrationDataFragment.this.getContext(), "Введите имя", Toast.LENGTH_SHORT).show();
                 return;
